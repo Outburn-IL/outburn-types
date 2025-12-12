@@ -1,0 +1,53 @@
+{
+  "name": "@outburn/types",
+  "version": "0.1.0",
+  "description": "TypeScript type definitions for Outburn FHIR tools",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc --noEmit && npm run test:types",
+    "test:types": "tsd",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "fhir",
+    "types",
+    "typescript",
+    "healthcare",
+    "hl7"
+  ],
+  "author": "Outburn Ltd.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/outburn/types.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "tsd": {
+    "directory": "src"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.2",
+    "@typescript-eslint/eslint-plugin": "^8.49.0",
+    "@typescript-eslint/parser": "^8.49.0",
+    "eslint": "^9.39.1",
+    "prettier": "^3.7.4",
+    "tsd": "^0.31.2",
+    "typescript": "^5.9.3"
+  }
+}
