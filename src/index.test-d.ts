@@ -227,10 +227,7 @@ const elementDefinition: ElementDefinition = {
   path: 'Extension.value[x]',
   min: 0,
   max: '1',
-  type: [
-    { code: 'string' },
-    { code: 'integer' },
-  ],
+  type: [{ code: 'string' }, { code: 'integer' }],
   short: 'Value of extension',
   definition: 'The value of the extension',
   extension: [
@@ -267,4 +264,3 @@ const boundElement: ElementDefinition = {
   max: '1',
 };
 expectAssignable<ElementDefinition>(boundElement);
-

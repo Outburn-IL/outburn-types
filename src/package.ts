@@ -42,4 +42,3 @@ export interface FileIndexEntryWithPkg extends FileInPackageIndex {
   __packageId: string;
   __packageVersion?: string;
 }
-

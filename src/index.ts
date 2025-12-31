@@ -143,18 +143,18 @@ export interface CapabilityStatement extends Resource {
 /**
  * FHIR Extension instance
  */
-export type FhirExtensionInstance = { 
-  url: string; 
-  [key: string]: unknown
+export type FhirExtensionInstance = {
+  url: string;
+  [key: string]: unknown;
 };
 
 /**
  * Element constraint definition
  */
-export type ElementConstraint = { 
+export type ElementConstraint = {
   source?: string;
   xpath?: string;
-  [key: string]: unknown
+  [key: string]: unknown;
 };
 
 /**
@@ -180,49 +180,48 @@ export interface ElementDefinitionSlicing {
  */
 export interface ElementDefinitionBinding {
   strength: 'required' | 'extensible' | 'preferred' | 'example';
-  valueSet?: string;              // Canonical URL of the ValueSet
+  valueSet?: string; // Canonical URL of the ValueSet
 }
 
 /**
  * Type definition for ElementDefinition
  */
 export interface ElementDefinitionType {
-  code: string;                   // e.g., 'string', 'CodeableConcept', 'Quantity', etc.
-  profile?: string[];             // URLs of constrained profiles
-  targetProfile?: string[];       // For references, allowed target profiles
-  extension?: unknown;            // Extensions for the type (e.g., FHIRPath type)
+  code: string; // e.g., 'string', 'CodeableConcept', 'Quantity', etc.
+  profile?: string[]; // URLs of constrained profiles
+  targetProfile?: string[]; // For references, allowed target profiles
+  extension?: unknown; // Extensions for the type (e.g., FHIRPath type)
 }
 
 /**
  * FHIR ElementDefinition interface representing a single element in a StructureDefinition
  */
 export interface ElementDefinition {
-  id: string;                     // e.g., 'Extension.value[x]'
-  path: string;                   // e.g., 'Extension.value[x]'
-  
+  id: string; // e.g., 'Extension.value[x]'
+  path: string; // e.g., 'Extension.value[x]'
+
   extension?: FhirExtensionInstance[]; // Extensions for this element
-  min?: number;                   // Cardinality minimum
-  max?: string;                   // Cardinality maximum (e.g., '1', '*')
+  min?: number; // Cardinality minimum
+  max?: string; // Cardinality maximum (e.g., '1', '*')
   type?: ElementDefinitionType[]; // Possible types for this element (for polymorphics)
   slicing?: ElementDefinitionSlicing; // Slicing definition if applicable
-  sliceName?: string;             // If this element is a slice
-  
-  fixedUri?: string;              // Fixed value (if constrained)
+  sliceName?: string; // If this element is a slice
+
+  fixedUri?: string; // Fixed value (if constrained)
   binding?: ElementDefinitionBinding; // Value set binding for coded types
-  
+
   // Other common constraint-related fields:
   short?: string;
-  definition?: string;            // markdown
-  comment?: string;               // markdown
-  requirements?: string;          // markdown
-  meaningWhenMissing?: string;    // markdown
-  
-  contentReference?: string;      // Reference to another element definition
+  definition?: string; // markdown
+  comment?: string; // markdown
+  requirements?: string; // markdown
+  meaningWhenMissing?: string; // markdown
+
+  contentReference?: string; // Reference to another element definition
   constraint?: ElementConstraint[]; // Constraints on this element
-  
+
   // Placeholder for additional optional fields:
   [key: string]: unknown;
 }
 
 export * from './package';
-
