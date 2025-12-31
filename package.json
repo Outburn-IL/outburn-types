@@ -42,10 +42,10 @@
     "directory": "src"
   },
   "devDependencies": {
-    "@types/node": "^22.19.2",
-    "@typescript-eslint/eslint-plugin": "^8.49.0",
-    "@typescript-eslint/parser": "^8.49.0",
-    "eslint": "^9.39.1",
+    "@types/node": "^22.19.3",
+    "@typescript-eslint/eslint-plugin": "^8.51.0",
+    "@typescript-eslint/parser": "^8.51.0",
+    "eslint": "^9.39.2",
     "prettier": "^3.7.4",
     "tsd": "^0.31.2",
     "typescript": "^5.9.3"
