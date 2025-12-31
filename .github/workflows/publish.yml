@@ -21,6 +21,9 @@ jobs:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Remove deprecated npm config
+        run: npm config delete always-auth || true
+
       - name: Update npm to latest
         run: npm install -g npm@latest
 
