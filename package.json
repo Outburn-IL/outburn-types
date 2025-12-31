@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "tsc --noEmit && npm run test:types",
+    "test": "npm run build && npm run test:types",
     "test:types": "tsd",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
