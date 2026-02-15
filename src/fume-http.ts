@@ -6,7 +6,14 @@
  * - client applications (e.g. fume-mapping-designer)
  */
 
-export type DiagnosticLevel = 'fatal' | 'invalid' | 'error' | 'warning' | 'notice' | 'info' | 'debug';
+export type DiagnosticLevel =
+  | 'fatal'
+  | 'invalid'
+  | 'error'
+  | 'warning'
+  | 'notice'
+  | 'info'
+  | 'debug';
 
 export type DiagnosticEntry = {
   code?: string;
