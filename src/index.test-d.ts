@@ -4,6 +4,10 @@ import {
   FhirVersionMinor,
   FhirRelease,
   Logger,
+  DiagnosticLevel,
+  DiagnosticEntry,
+  EvaluateVerboseReport,
+  FumeHttpEvaluationError,
   FhirPackageIdentifier,
   JsonValue,
   Resource,
@@ -17,6 +21,42 @@ import {
   ElementDefinitionType,
   ElementDefinition,
 } from './index';
+
+// Test FUME HTTP types
+const diagLevel: DiagnosticLevel = 'error';
+expectAssignable<DiagnosticLevel>(diagLevel);
+expectNotAssignable<DiagnosticLevel>('oops');
+
+const diagEntry: DiagnosticEntry = {
+  severity: 1,
+  level: 'warning',
+  timestamp: 123,
+};
+expectAssignable<DiagnosticEntry>(diagEntry);
+
+const report: EvaluateVerboseReport = {
+  ok: false,
+  status: 422,
+  result: undefined,
+  diagnostics: { error: [], warning: [], debug: [] },
+  executionId: 'abc',
+};
+expectAssignable<EvaluateVerboseReport>(report);
+
+const legacyError: FumeHttpEvaluationError = {
+  __isFumeError: true,
+  __isFlashError: false,
+  message: 'bad',
+  code: 'EVALUATION_FAILED',
+  name: 'EvaluationError',
+  value: '',
+  token: '',
+  cause: '',
+  line: '',
+  start: '',
+  position: '',
+};
+expectAssignable<FumeHttpEvaluationError>(legacyError);
 
 // Test FhirVersion - assignable to the union type
 const fhirVersion1: FhirVersion = '3.0.2';

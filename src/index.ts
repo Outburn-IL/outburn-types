@@ -26,6 +26,14 @@ export type FhirVersionMinor = '3.0' | '4.0' | '4.3' | '5.0';
  */
 export type FhirRelease = 'R3' | 'STU3' | 'R4' | 'R4B' | 'R5';
 
+// FUME HTTP API response shapes
+export type {
+  DiagnosticEntry,
+  DiagnosticLevel,
+  EvaluateVerboseReport,
+  FumeHttpEvaluationError,
+} from './fume-http';
+
 /**
  * Logger interface for structured logging
  */
