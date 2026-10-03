@@ -1,0 +1,6 @@
+{
+  "name": "fume-plugin-authoring-example",
+  "private": true,
+  "scripts": { "typecheck": "tsc --noEmit" },
+  "devDependencies": { "@outburn/types": "^0.3.0", "typescript": "^5.9.3" }
+}

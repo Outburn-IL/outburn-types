@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "types": [],
+    "paths": { "@outburn/types": ["../../dist/index.d.ts"] }
+  },
+  "include": ["plugin.ts", "plugin.cjs"]
+}

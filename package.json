@@ -15,8 +15,9 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "npm run build && npm run test:types",
+    "test": "npm run build && npm run test:types && npm run test:authoring",
     "test:types": "tsd",
+    "test:authoring": "tsc -p examples/plugin-authoring/tsconfig.json",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
