@@ -7,13 +7,7 @@
  */
 
 export type DiagnosticLevel =
-  | 'fatal'
-  | 'invalid'
-  | 'error'
-  | 'warning'
-  | 'notice'
-  | 'info'
-  | 'debug';
+  'fatal' | 'invalid' | 'error' | 'warning' | 'notice' | 'info' | 'debug';
 
 export type DiagnosticEntry = {
   code?: string;
