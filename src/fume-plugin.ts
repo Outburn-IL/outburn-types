@@ -1,19 +1,13 @@
 import type { JsonValue } from './index';
 
 export type FumePluginJsonValue =
-  | string
-  | number
-  | boolean
-  | null
-  | FumePluginJsonValue[]
-  | { [key: string]: FumePluginJsonValue };
+  string | number | boolean | null | FumePluginJsonValue[] | { [key: string]: FumePluginJsonValue };
 
 export type FumePluginData = JsonValue;
 export type FumePluginBindings = Record<string, FumePluginData>;
 
 type Exposure =
-  | { localName: string; globalName?: string }
-  | { localName?: string; globalName: string };
+  { localName: string; globalName?: string } | { localName?: string; globalName: string };
 
 export type FumePluginVariableDefinition = Exposure & {
   value: FumePluginJsonValue;
@@ -63,7 +57,10 @@ export interface FumePluginHost {
 }
 
 export type FumePluginModule<
-  TConfig extends { [Key in keyof TConfig]: FumePluginJsonValue } = Record<string, FumePluginJsonValue>,
+  TConfig extends { [Key in keyof TConfig]: FumePluginJsonValue } = Record<
+    string,
+    FumePluginJsonValue
+  >,
   TFunctions extends FumePluginFunctionMap = FumePluginFunctionMap,
 > =
   | {

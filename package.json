@@ -1,6 +1,6 @@
 {
   "name": "@outburn/types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript type definitions for Outburn FHIR tools",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,11 +17,12 @@
     "build": "tsc",
     "test": "npm run build && npm run test:types && npm run test:authoring",
     "test:types": "tsd",
-    "test:authoring": "tsc -p examples/plugin-authoring/tsconfig.json",
+    "test:authoring": "npm run test:authoring:manifest && tsc -p examples/plugin-authoring/tsconfig.json",
+    "test:authoring:manifest": "node -e \"require('node:assert/strict').equal(require('./examples/plugin-authoring/package.json').devDependencies['@outburn/types'], '^' + require('./package.json').version)\"",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
-    "prepublishOnly": "npm run build && npm test"
+    "prepublishOnly": "npm run lint && npm run format:check && npm test"
   },
   "keywords": [
     "fhir",

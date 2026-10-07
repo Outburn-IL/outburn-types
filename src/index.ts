@@ -93,13 +93,7 @@ export interface FhirPackageIdentifier {
  * JSON-compatible value type for FHIR resources
  */
 export type JsonValue =
-  | string
-  | number
-  | boolean
-  | null
-  | undefined
-  | JsonValue[]
-  | { [key: string]: JsonValue };
+  string | number | boolean | null | undefined | JsonValue[] | { [key: string]: JsonValue };
 
 /**
  * Base FHIR Resource interface
