@@ -1,6 +1,6 @@
 {
   "name": "@outburn/types",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "TypeScript type definitions for Outburn FHIR tools",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -15,8 +15,9 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "npm run build && npm run test:types",
+    "test": "npm run build && npm run test:types && npm run test:authoring",
     "test:types": "tsd",
+    "test:authoring": "tsc -p examples/plugin-authoring/tsconfig.json",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
@@ -42,11 +43,11 @@
     "directory": "src"
   },
   "devDependencies": {
-    "@types/node": "^22.19.11",
-    "@typescript-eslint/eslint-plugin": "^8.55.0",
-    "@typescript-eslint/parser": "^8.55.0",
-    "eslint": "^9.39.2",
-    "prettier": "^3.8.1",
+    "@types/node": "^22.20.5",
+    "@typescript-eslint/eslint-plugin": "^8.71.0",
+    "@typescript-eslint/parser": "^8.71.0",
+    "eslint": "^9.39.5",
+    "prettier": "^3.9.9",
     "tsd": "^0.31.2",
     "typescript": "^5.9.3"
   }

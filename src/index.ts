@@ -34,6 +34,25 @@ export type {
   FumeHttpEvaluationError,
 } from './fume-http';
 
+export type {
+  FumePluginJsonValue,
+  FumePluginData,
+  FumePluginBindings,
+  FumePluginManifest,
+  FumePluginVariableDefinition,
+  FumePluginNativeDefinition,
+  FumePluginMappingDefinition,
+  FumePluginNativeFunction,
+  FumePluginFunctionMap,
+  FumePluginHost,
+  FumePluginModule,
+  FumePluginDeploymentConfig,
+  FumePluginInstallationConfig,
+  FumePluginRootAlias,
+  FumePluginHostError,
+  FumePluginErrorCode,
+} from './fume-plugin';
+
 /**
  * Logger interface for structured logging
  */
@@ -112,6 +131,7 @@ export interface Bundle<T extends Resource = Resource> extends Resource {
     request?: {
       method: string;
       url: string;
+      ifMatch?: string;
     };
     response?: {
       status: string;
